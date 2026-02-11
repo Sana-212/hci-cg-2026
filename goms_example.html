@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GOMS Overview and Worked Example</title>
+
+  
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: #2c3e50;
+      background-color: #fefefe;
+      font-size: 16px;
+    }
+
+    header {
+      background-color: #3182b8;
+      color: #ffffff;
+      font-size: 1.2rem;
+    }
+
+  nav a {
+      color: #ffffff;
+      font-size: 1rem;
+    }
+
+    nav a[aria-current="page"] {
+      color: #1ff8ffe8;
+    }
+
+    nav a:hover {
+      color: #103955;
+      font-size: 1.1rem;
+    }
+
+    main h2 {
+      color: #2980b9;
+      font-size: 1.5rem;
+    }
+
+    main h3 {
+      color: #3498db;
+      font-size: 1.2rem;
+    }
+
+    pre {
+      background-color: #e7f3ff;
+      color: #2c3e50;
+      font-size: 1rem;
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #ecf0f1;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+   <header>
+    <h1>GOMS Model: Overview and Worked Example</h1>
+
+    <!-- Primary navigation landmark for keyboard and screen reader users -->
+    <nav aria-label="Primary navigation">
+      <ul>
+        <!-- Current page is indicated using aria-current -->
+        <li><a href="index.html">Home</a></li>
+        <!-- Navigation links to other site sections -->
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="analysis.html">Interaction Analysis</a></li>
+        <li><a href="goms_example.html" aria-current="page">GOMS Overview & Example</a></li>
+        <li><a href="norman2klm.html">Norman–GOMS–KLM</a></li>
+        <li><a href="norman_example.html">Norman Example</a></li>
+        <li><a href="html-errors.html">HTML Mistakes</a></li>
+
+
+
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <article>
+
+      <section>
+        <h2>GOMS</h2>
+
+        <p>
+          The GOMS model of Card, Moran and Newell is an acronym for Goals, Operators,
+          Methods and Selection [56]. A GOMS description consists of these four elements:
+        </p>
+
+        <section>
+          <h3>Goals</h3>
+          <p>
+            These are the user’s goals, describing what the user wants to achieve.
+          </p>
+        </section>
+
+        <section>
+          <h3>Operators</h3>
+          <p>
+            These are the lowest level of analysis. They are the basic actions that
+            the user must perform in order to use the system. They may affect the
+            system (for example, press the ‘X’ key) or only the user’s mental state
+            (for example, read the dialog box).
+          </p>
+        </section>
+
+        <section>
+          <h3>Methods</h3>
+          <p>
+            As we have already noted, there are typically several ways in which a goal
+            can be split into subgoals. In GOMS these goal decompositions are referred
+            to as methods.
+          </p>
+
+          <pre>
+GOAL: ICONIZE-WINDOW
+. [select GOAL: USE-CLOSE-METHOD
+. . MOVE-MOUSE-TO-WINDOW-HEADER
+. . POP-UP-MENU
+. . CLICK-OVER-CLOSE-OPTION
+GOAL: USE-L7-METHOD
+. . PRESS-L7-KEY]
+          </pre>
+        </section>
+
+        <section>
+          <h3>Selection</h3>
+          <p>
+            GOMS does not leave this as a random choice, but attempts to predict which
+            methods will be used. This typically depends both on the particular user
+            and on the state of the system and details about the goals.
+          </p>
+
+          <pre>
+User Sam:
+Rule 1: Use the CLOSE-METHOD unless another rule applies.
+Rule 2: If the application is ‘blocks’ use the L7-METHOD
+          </pre>
+        </section>
+
+      </section>
+
+      <section>
+        <h2>Worked Exercise: GOMS Description of Photocopying a Journal Article</h2>
+
+        <p>
+          One possible GOMS description of the goal hierarchy for this task is given
+          below. Answers will vary depending on assumptions about the photocopier
+          used as the model for the exercise. In this example, we will assume that
+          the article is to be copied one page at a time and that a cover over the
+          imaging surface of the copier has to be in place before the actual copy
+          can be made.
+        </p>
+
+        <pre>
+GOAL: PHOTOCOPY-PAPER
+. GOAL: LOCATE-ARTICLE
+. GOAL: PHOTOCOPY-PAGE repeat until no more pages
+. . GOAL: ORIENT-PAGE
+. . . OPEN-COVER
+. . . SELECT-PAGE
+. . . POSITION-PAGE
+. . . CLOSE-COVER
+. . GOAL: PRESS-COPY-BUTTON
+. . GOAL: VERIFY-COPY
+. . . LOCATE-OUT-TRAY
+. . . EXAMINE-COPY
+. GOAL: COLLECT-COPY
+. . LOCATE-OUT-TRAY
+. . REMOVE-COPY (outer goal satisfied!)
+. GOAL: RETRIEVE-JOURNAL
+. . OPEN-COVER
+. . REMOVE-JOURNAL
+. . CLOSE-COVER
+        </pre>
+
+      </section>
+
+    </article>
+
+  </main>
+
+  <footer>
+    <p>
+      Reference: Alan Dix et al., <em>Human–Computer Interaction</em>,
+      Chapter 12, pp. 422–425.
+    </p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Common HTML Mistakes</title>
+<style>
+  body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #2c3e50;
+    background-color: #fefefe;
+    font-size: 16px;
+  }
+
+  header {
+    background-color: #3182b8;
+    color: #ffffff;
+    font-size: 1.2rem;
+  }
+
+  nav a {
+    color: #ffffff;
+    font-size: 1rem;
+  }
+
+  nav a[aria-current="page"] {
+    color: #1ff8ffe8;
+  }
+
+  nav a:hover {
+    color: #103955;
+    font-size: 1.1rem;
+  }
+
+  main h2 {
+    color: #2980b9;
+    font-size: 1.5rem;
+  }
+
+  table {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    color: #2c3e50;
+    background-color: #fefefe;
+    width: 100%;
+  }
+
+  th {
+    background-color: #e7f3ff;
+    color: #2c3e50;
+    font-size: 1rem;
+  }
+
+  td {
+    color: #2c3e50;
+    font-size: 1rem;
+  }
+
+  tr:nth-child(even) td {
+    background-color: #f0f8ff; 
+  }
+
+  tr:nth-child(odd) td {
+    background-color: #ffffff;
+  }
+
+  footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    font-size: 0.9rem;
+  }
+
+  footer a {
+    color: #ecf0f1;
+  }
+
+  footer a:hover {
+    color: #e6e356d5;
+    font-size: 1rem;
+  }
+</style>
+</head>
+
+<body>
+<header>
+    <h1>HTML Mistakes</h1>
+      <nav aria-label="Primary navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <!-- Navigation links to other site sections -->
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="analysis.html">Interaction Analysis</a></li>
+        <li><a href="goms_example.html">GOMS Overview & Example</a></li>
+        <li><a href="norman2klm.html">Norman–GOMS–KLM</a></li>
+        <li><a href="norman_example.html">Norman Example</a></li>
+        <li><a href="html-errors.html" aria-current="page">HTML Mistakes</a></li>
+      </ul>
+    </nav>
+</header>
+
+<main>
+   <section>
+  <h2>10 Common HTML Mistakes And Correct Usage</h2>
+
+  <table border="1">
+    <caption>Frequently Observed HTML Errors with Correct Usage</caption>
+
+    <thead>
+      <tr>
+        <th scope="col">HTML Tag / Concept</th>
+        <th scope="col">Explanation</th>
+        <th scope="col">Wrong Example</th>
+        <th scope="col">Correct Example</th>
+      </tr>
+    </thead>
+
+    <tbody>
+     <tr>
+        <th scope="row">&lt;input&gt; missing name</th>
+        <td>Form inputs must have a name attribute for data submission.</td>
+        <td><code>&lt;input type="text"&gt;</code></td>
+        <td><code>&lt;input type="text" name="username"&gt;</code></td>
+      </tr>
+
+       <tr>
+        <th scope="row">&lt;iframe&gt; missing title</th>
+        <td>Iframes must include a title for accessibility.</td>
+        <td><code>&lt;iframe src="video.html"&gt;&lt;/iframe&gt;</code></td>
+        <td><code>&lt;iframe src="video.html" title="Intro video"&gt;&lt;/iframe&gt;</code></td>
+      </tr>
+
+      <tr>
+        <th scope="row">Using &lt;b&gt; for emphasis</th>
+        <td>Use semantic tags like &lt;strong&gt; instead of &lt;b&gt; for meaning.</td>
+        <td><code>&lt;p&gt;This is &lt;b&gt;important&lt;/b&gt;&lt;/p&gt;</code></td>
+        <td><code>&lt;p&gt;This is &lt;strong&gt;important&lt;/strong&gt;&lt;/p&gt;</code></td>
+      </tr>
+
+      <tr>
+        <th scope="row">&lt;ul&gt; / &lt;ol&gt;</th>
+        <td>Lists must contain only list items.</td>
+        <td><code>&lt;ul&gt;&lt;p&gt;Item&lt;/p&gt;&lt;/ul&gt;</code></td>
+        <td><code>&lt;ul&gt;&lt;li&gt;Item&lt;/li&gt;&lt;/ul&gt;</code></td>
+      </tr>
+
+      <tr>
+        <th scope="row">&lt;a&gt;</th>
+        <td>Links must have meaningful text.</td>
+        <td><code>&lt;a href="page.html"&gt;Click here&lt;/a&gt;</code></td>
+        <td><code>&lt;a href="page.html"&gt;View contact page&lt;/a&gt;</code></td>
+      </tr>
+
+      <tr>
+        <th scope="row">&lt;table&gt;</th>
+        <td>Tables must include headers for accessibility.</td>
+        <td><code>&lt;table&gt;&lt;tr&gt;&lt;td&gt;Name&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</code></td>
+        <td><code>&lt;table&gt;&lt;tr&gt;&lt;th scope="col"&gt;Name&lt;/th&gt;&lt;/tr&gt;&lt;/table&gt;</code></td>
+      </tr>
+
+      <tr>
+        <th scope="row">&lt;form&gt;</th>
+        <td>Forms should group related controls.</td>
+        <td><code>&lt;form&gt;&lt;input&gt;&lt;input&gt;&lt;/form&gt;</code></td>
+        <td><code>&lt;form&gt;&lt;fieldset&gt;&lt;input&gt;&lt;input&gt;&lt;/fieldset&gt;&lt;/form&gt;</code></td>
+      </tr>
+
+      <tr>
+        <th scope="row">&lt;button&gt;</th>
+        <td>Buttons must specify their type.</td>
+        <td><code>&lt;button&gt;Submit&lt;/button&gt;</code></td>
+        <td><code>&lt;button type="submit"&gt;Submit&lt;/button&gt;</code></td>
+      </tr>
+
+      <tr>
+        <th scope="row">&lt;lang&gt;</th>
+        <td>Document language must be declared.</td>
+        <td><code>&lt;html&gt;</code></td>
+        <td><code>&lt;html lang="en"&gt;</code></td>
+      </tr>
+
+      <tr>
+        <th scope="row">&lt;pre&gt;</th>
+        <td>Code must be escaped inside preformatted text.</td>
+        <td><code>&lt;pre&gt;&lt;p&gt;Text&lt;/p&gt;&lt;/pre&gt;</code></td>
+        <td><code>&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;Text&amp;lt;/p&amp;gt;&lt;/code&gt;&lt;/pre&gt;</code></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+</main>
+
+<footer>
+<p><a href="index.html">Back to home </a></p>
+</footer>
+</body>
+</html>
